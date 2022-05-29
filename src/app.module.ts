@@ -1,3 +1,4 @@
+import { GoogleSpreadsheetModule } from './sheets/googlespreadsheet.module';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
@@ -10,6 +11,7 @@ import { OrdersModule } from './orders/orders.module';
       isGlobal: true,
       envFilePath: ['.env.homologacao', '.env.producao']
     }),
+    GoogleSpreadsheetModule.forRoot(),
     OrdersModule
   ],
   controllers: [AppController],
