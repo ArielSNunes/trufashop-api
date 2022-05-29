@@ -25,7 +25,7 @@ export type PixCalendario = {
 	/** Tempo para expiração da cobrança */
 	expiracao: number
 	/** Horário da criação da cobrança */
-	criacao: string
+	criacao?: string
 }
 
 export type PixLoc = {
@@ -52,13 +52,14 @@ export type PixValor = {
 export type PixCobranca = {
 	calendario: PixCalendario
 	/** Id da transaçào, caso não informado, é gerado pela GerenciaNet */
-	txid: string
-	loc: PixLoc
+	txid?: string
+	loc?: PixLoc
 	/** Revisão da transação PIX */
-	revisao: number
+	revisao?: number
 	/** URL do QRCode */
-	location: string
+	location?: string
 	devedor: PixDevedor
+	valor: PixValor
 	/** Chave Pix que recebe o valor */
 	chave: string
 	/** Descrição da cobrança */

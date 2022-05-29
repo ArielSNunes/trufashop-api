@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common"
 import { PixCobranca, PixCredentials, PixGetTokenData, PixLoc, PixToken } from "./pix.types"
 import axios, { AxiosRequestConfig } from 'axios'
-import https from 'https'
+import * as https from 'https'
 
 export type PixServiceConstructor = {
 	certificate: Buffer
