@@ -20,11 +20,7 @@ export class GoogleSpreadsheetProvider {
 
 	async initDoc(): Promise<void> {
 		this.logger.log('InitDoc Called')
-		console.log({
-			client_email: this.configService.get<string>('EMAIL_GOOGLE_API'),
-			private_key: this.configService.get<string>('GOOGLE_SHEET_PRIVATE_KEY')
-				.replace(/\\n/g, "\n")
-		})
+
 		await this.doc.useServiceAccountAuth({
 			client_email: this.configService.get<string>('EMAIL_GOOGLE_API'),
 			private_key: this.configService.get<string>('GOOGLE_SHEET_PRIVATE_KEY')
